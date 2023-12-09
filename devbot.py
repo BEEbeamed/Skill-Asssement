@@ -115,8 +115,8 @@ while True:
         print("Location GPS coordinates: " + str(locationLat) + ", " + str(locationLng))
         
         ssAPIGetParameters = { 
-                                "lat": float(47.36581), 
-                                "lon": float(-82.10139)
+                                "lat": locationLat, 
+                                "lon": locationLng
                               }
 # 9. Provide the URL to the Sunrise/Sunset API.
         r = requests.get("https://api.sunrise-sunset.org/json?", 
@@ -144,7 +144,7 @@ while True:
                              "Content-Type": "application/json"
                            }
         PostData = {
-                            "roomId": "Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL1JPT00vYWM1YTRjMTAtOGYxOC0xMWVlLWFlNmYtYzU5NGM3NWZiZTVm",
+                            "roomId": roomIdToGetMessages,
                             "text": responseMessage
                         }
 
